@@ -20,4 +20,13 @@ variable for the Database and then run the database via a container.
 source set-env-vars.sh
 ./run-mysql.sh
 ```
-
+// Note for Self:
+// Problems I ran into with initial Boilerplate
+// 1. ERROR: no matching manifest for linux/arm64/v8 in the manifest list entries
+//        Docker was unable to run image/container using mysql
+//        Solution: After looking at documentation, using MariaDB instead of MySQL according to compatibility
+// 2. Missing Gradle file
+//        Boilerplate being used was missing gradle-wrapper.jar
+//        Solution: brew install gradle then run gradle wrapper (you can also supply additional flags to specify versions etc. gradle   //        wrapper --gradle-version 6.2 --distribution-type all)
+// 3. Deprecated Gradle features were used in this build, making it incompatible with Gradle 8.0
+//        Unsupported Java runtime... Either upgrade Gradle version in project or downgrade and run IDE on Java 15
